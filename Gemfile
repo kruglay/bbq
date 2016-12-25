@@ -10,7 +10,7 @@ gem 'devise', '~> 4.1.1'
 gem 'devise-i18n'
 
 # гем с русскими форматами (времени и пр.)
-gem 'russian'
+gem 'rails-i18n'
 
 # гем, интегрирующий bootstrap
 gem 'twitter-bootstrap-rails'

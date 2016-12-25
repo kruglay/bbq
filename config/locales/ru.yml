@@ -52,3 +52,9 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+
+  views:
+    error:
+      one: 'ошибка'
+      few: 'ошибки'
+      many: 'ошибок'
