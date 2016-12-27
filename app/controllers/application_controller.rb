@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
         (model.try(:event).present? && model.event.user == current_user))
   end
 
+  def reject_user
+    redirect_to user_path(current_user), I18n.t('controllers.users.reject_message')
+  end
+
 end
