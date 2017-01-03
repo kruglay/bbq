@@ -10,7 +10,7 @@ class Subscription < ActiveRecord::Base
   # проверки выполняются только если user не задан (незареганные приглашенные)
   validates :user_name, presence: true, unless: 'user.present?'
   validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/, unless: 'user.present?'
-  validate :user_email_exist
+  validate :user_email_exist, unless: 'user.present?'
   # для данного event_id один юзер может подписаться только один раз (если юзер задан)
   validates :user, uniqueness: {scope: :event_id}, if: 'user.present?'
 
@@ -41,14 +41,12 @@ class Subscription < ActiveRecord::Base
   private
 
   def user_email_exist
-    if user.nil? && User.exists?(email: user_email)
-      errors.add(:empty, I18n.t('controllers.subscription.error_exist_email'))
-    end
+    errors.add(:user_email, I18n.t('errors.message.taken')) if User.exists?(email: user_email)
   end
 
   def event_belong_to_current_user
     if event.user == user
-      errors.add(:empty, I18n.t('controllers.subscription.error_owner'))
+      errors.add(:empty, I18n.t('errors.message.owner'))
     end
   end
 end
