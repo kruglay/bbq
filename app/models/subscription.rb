@@ -41,12 +41,12 @@ class Subscription < ActiveRecord::Base
   private
 
   def user_email_exist
-    errors.add(:user_email, I18n.t('errors.message.taken')) if User.exists?(email: user_email)
+    errors.add(:user_email, :taken) if User.exists?(email: user_email)
   end
 
   def event_belong_to_current_user
     if event.user == user
-      errors.add(:empty, I18n.t('errors.message.owner'))
+      errors.add(:empty, :owner)
     end
   end
 end
