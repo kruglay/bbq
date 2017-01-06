@@ -17,6 +17,7 @@ gem 'twitter-bootstrap-rails'
 
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog-aws'
 
 gem 'uglifier', '>= 1.3.0'
 
