@@ -6,6 +6,8 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+      photo: 'Фотография'
+      subscription: 'Подписка'
 
     # Перевод названий аттрибутов моделей
     attributes:
@@ -15,6 +17,7 @@ ru:
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
         sign_up: 'Зарегистрироваться'
+        avatar: 'Аватарка'
         log_in: 'Войти'
         forgot_your_password: 'Забыли пароль?'
       event:
@@ -26,6 +29,8 @@ ru:
         user_name: 'Имя'
         user_email: 'Email'
         empty: ''
+      photo:
+        photo: 'Фотография'
   # Перевод сообщений, которые отправляет контроллер
   controllers:
     events:
@@ -43,6 +48,10 @@ ru:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
 
   # Перевод названия приложения и компании-разработчика
   app:

@@ -15,6 +15,9 @@ gem 'rails-i18n'
 # гем, интегрирующий bootstrap
 gem 'twitter-bootstrap-rails'
 
+gem 'carrierwave'
+gem 'rmagick'
+
 gem 'uglifier', '>= 1.3.0'
 
 # для поддержки jquery
