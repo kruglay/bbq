@@ -15,9 +15,9 @@ gem 'rails-i18n'
 # гем, интегрирующий bootstrap
 gem 'twitter-bootstrap-rails'
 
-gem 'carrierwave'
+gem 'carrierwave','~>0.11.2'
 gem 'rmagick'
-gem 'fog-aws'
+gem 'fog-aws', '1.0.0'
 
 gem 'uglifier', '>= 1.3.0'
 
