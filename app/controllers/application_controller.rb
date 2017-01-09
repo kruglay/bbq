@@ -29,4 +29,15 @@ class ApplicationController < ActionController::Base
     redirect_to user_path(current_user), I18n.t('controllers.users.reject_message')
   end
 
+  def notify_subscribers(event, notification)
+    # собираем всех подписчиков и автора события в массив мэйлов, исключаем повторяющиеся
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
+
+    # XXX: Этот метод может выполняться долго из-за большого числа подписчиков
+    # поэтому в реальных приложениях такие вещи надо выносить в background задачи!
+    all_emails.each do |mail|
+      method_name = notification.class.name.downcase
+      EventMailer.send(method_name, event, notification, mail).deliver_now
+    end
+  end
 end

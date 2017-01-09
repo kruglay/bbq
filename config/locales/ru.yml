@@ -80,6 +80,12 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+    photo:
+      title: 'Новое фото'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
   views:
     error:
       one: 'ошибка'
@@ -94,3 +100,7 @@ ru:
     messages:
       taken: 'уже используется'
       owner: 'Вы не можете подписаться, т.к. вы создали это событие'
+  actionmailer:
+    subscription: 'Новая подписка на %{title}'
+    comment: 'Новый комментарий @ %{title}'
+    photo: 'Добавлено новое фото к событию "%{title}"'

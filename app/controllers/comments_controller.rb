@@ -48,15 +48,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:body, :user_name)
   end
-
-  def notify_subscribers(event, comment)
-    # собираем всех подписчиков и автора события в массив мэйлов, исключаем повторяющиеся
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
-
-    # XXX: Этот метод может выполняться долго из-за большого числа подписчиков
-    # поэтому в реальных приложениях такие вещи надо выносить в background задачи!
-    all_emails.each do |mail|
-      EventMailer.comment(event, comment, mail).deliver_now
-    end
-  end
 end
