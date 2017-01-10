@@ -31,6 +31,13 @@ ru:
         empty: ''
       photo:
         photo: 'Фотография'
+
+    errors:
+      models:
+        photo:
+          attributes:
+            photo:
+              blank: 'не может быть пустой'
   # Перевод сообщений, которые отправляет контроллер
   controllers:
     events:
