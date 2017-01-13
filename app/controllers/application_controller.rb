@@ -31,13 +31,13 @@ class ApplicationController < ActionController::Base
 
   def notify_subscribers(event, notification)
     # собираем всех подписчиков и автора события в массив мэйлов, исключаем повторяющиеся
-    all_emails = (event.subscriptions.map{|s| s.user_name unless s.user = notification.user} + [event.user.email]).compact.uniq
+    all_emails = (event.subscriptions.map{|s| s.user_name unless s.user == notification.user} + [event.user.email]).compact
 
     # XXX: Этот метод может выполняться долго из-за большого числа подписчиков
     # поэтому в реальных приложениях такие вещи надо выносить в background задачи!
     all_emails.each do |mail|
       method_name = notification.class.name.downcase
-      EventMailer.send(method_name, event, notification, mail).deliver_now
+      EventMailer.public_send(method_name, event, notification, mail).deliver_now
     end
   end
 end
