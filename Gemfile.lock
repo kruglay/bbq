@@ -36,6 +36,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (6.0.4)
     bcrypt (3.1.11)
     builder (3.2.2)
@@ -166,6 +169,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   byebug
   carrierwave (~> 0.11.2)
   devise (~> 4.1.1)
@@ -181,4 +185,4 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
-   1.13.6
+   1.14.6

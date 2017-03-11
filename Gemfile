@@ -24,6 +24,8 @@ gem 'uglifier', '>= 1.3.0'
 # для поддержки jquery
 gem 'jquery-rails'
 
+gem 'annotate'
+
 # в продакшен сервере heroku этот гем соединяет с базой данных Postgres
 group :production do
   gem 'pg'

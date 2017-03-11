@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id          :integer          not null, primary key
+#  title       :string
+#  description :text
+#  address     :string
+#  datetime    :datetime
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :integer
+#
+# Indexes
+#
+#  index_events_on_user_id  (user_id)
+#
+
 # (с) goodprogrammer.ru
 #
 # Модель события

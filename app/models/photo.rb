@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: photos
+#
+#  id         :integer          not null, primary key
+#  photo      :string
+#  event_id   :integer
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+# Indexes
+#
+#  index_photos_on_event_id  (event_id)
+#  index_photos_on_user_id   (user_id)
+#
+
 class Photo < ActiveRecord::Base
   # Фотография оставлена к какому-то события
   belongs_to :event

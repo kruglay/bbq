@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
 
     if @new_comment.save
       # уведомляем всех подписчиков о новом комментарии
-      # notify_subscribers(@event, @new_comment)
+      notify_subscribers(@event, @new_comment)
       # если сохранился успешно, редирект на страницу самого события
       redirect_to @event, notice: I18n.t('controllers.comments.created')
     else

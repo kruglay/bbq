@@ -31,6 +31,9 @@ ru:
         empty: ''
       photo:
         photo: 'Фотография'
+      comment:
+        body: 'Текст'
+        user_name: 'Имя'
 
     errors:
       models:
