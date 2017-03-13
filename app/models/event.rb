@@ -45,4 +45,3 @@ class Event < ActiveRecord::Base
     (subscribers + [user]).uniq
   end
 end
-
